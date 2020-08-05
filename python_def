@@ -1,0 +1,45 @@
+# python_example_def
+
+# 입력값 갯수 알 수 없을 때
+def add_many(*args)  # 매개변수 앞에 *를 붙여주면 입력값을 전부 모아서 튜플로 만들어 줌
+    result = 0
+    for i in args:
+        result = result + i
+    return result
+
+result = add_may(1, 2, 3)
+print(result)
+> 6
+result = add_may(1, 2, 3, 4, 5, 6)
+> print(result)
+>> > 55
+
+# *매개변수 응용
+def add_mul(choice, *args):
+    if choice == 'add':
+        result = 0
+        for i in args:
+            result = result + i
+    elif choice == 'mul':
+        result = 1
+        for i in args:
+            result = result * i
+    return result
+
+
+result = add_mul('add', 1, 2, 3, 4, 5)
+print(result)
+>>> 15
+result = add_mul('mul', 1, 2, 3, 4, 5)
+print(result)
+>>> 120
+
+
+# ** 두개 붙여서 딕셔너리 만들기
+def print_kwargs(**kwargs):
+    print(kwargs)
+
+print_kwargs(a=1)
+{'a': 1}
+print_kwargs(name='foo', age=3)
+{'a': 3, 'name': 'foo'}
